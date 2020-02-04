@@ -17,6 +17,8 @@ They starts with `@`, that help machines to learn more about your API.
 }
 ```
 
+So JSON-LD is all about adding more context to your data by specifying that our resources will contain special keys like `@context`, `@id` and `@type`. It's JSON, but if a client understands JSON-LD, it's going to be able to get a lot more info about your API.
+
 ## Fields
 
 ### @id
