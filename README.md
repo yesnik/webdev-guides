@@ -1,2 +1,3 @@
-# webdev-guides
-General information about web development
+# Web development guides
+
+General information about web development.
