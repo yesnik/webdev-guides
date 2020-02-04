@@ -1,8 +1,6 @@
 # JSON LD
 
-JSON-LD - JavaScript Object Notation for Linked Data.
-
-JSON-LD is a "standard" that describes a few extra fields that your JSON can have.
+JSON-LD (JavaScript Object Notation for Linked Data) is a "standard" that describes a few extra fields that your JSON can have.
 They starts with `@`, that help machines to learn more about your API.
 
 ```json
