@@ -22,3 +22,25 @@ There are several other services built on top of the Internet, such as email and
 - **IP address** - Internet Protocol address; every computer connected to the Internet has a unique identifying number. 
 Example: `192.168.10.2`
 - **ISP** - Internet Service Provider; an organization or company that provides Internet connectivity.
+- **Kerberos** - An authentication system developed at the Massachusetts Institute of Technology (MIT); it enables the exchange of private information across an open network by assigning a unique key called a "ticket" to a user requesting access to secure information. 
+- **LAN** - Local area network; a network that extends over a small area (usually within a square mile or less). Connects a group of computers for the purpose of sharing resources such as programs, documents, or printers. Shared files often are stored on a central file server. 
+- **MAC** - Media Access Control; The hardware address of a device connected to a shared network. 
+- **MIME** - Multipurpose Internet Mail Extensions; a protocol that enables you to include various types of files (text, audio, video, images, etc.) as an attachment to an e-mail message. 
+- **NAT** - Network Address Translation; a standard that enables a LAN to use a set of IP addresses for internal traffic and a single IP address for communications with the Internet.
+- **packet** - A unit of transmission in data communications. The TCP/IP protocol breaks large data files into smaller chunks for sending over a network so that less data will have to be re-transmitted if errors occur. 
+- **PDF** - Portable Document Format; a type of formatting that enables files to be viewed on a variety computers regardless of the program originally used to create them. PDF files retain the "look and feel" of the original document with special formatting, graphics, and color intact. You use a special program or print driver (Adobe Distiller or PDF Writer) to convert a file into PDF format. 
+- **peer-to-peer** - A type of connection between two computers; both perform computations, store data, and make requests from each other (unlike a client-server connection where one computer makes a request and the other computer responds with information). 
+- **POP** - Post Office Protocol; a method of handling incoming electronic mail. 
+Example: E-mail programs may use this protocol for storing your incoming messages on a special cluster of servers called pop.service.ohio-state.edu and delivering them when requested. 
+- **proxy** - Refers to a special kind of server that functions as an intermediate link between a client application (like a web browser) and a real server. 
+The proxy server intercepts requests for information from the real server and whenever possible, fills the request. 
+When it is unable to do so, the request is forwarded to the real server. 
+- **SATA** - Serial Advanced Technology Attachment or Serial ATA. An interface used to connect ATA hard drives to a computer's motherboard that provides a better, more efficient interface; Serial ATA is likely to replace the previous standard, Parallel ATA (PATA), which has become dated.
+- **serial port** - An interface on a computer that supports transmission of a single bit at a time; 
+can be used for connecting almost any type of external device including a mouse, a modem, or a printer.
+- **SMTP** - Simple Mail Transfer Protocol; a method of handling outgoing electronic mail.
+- **TCP/IP** - Transmission Control Protocol/Internet Protocol; an agreed upon set of rules that tells computers how to exchange information over the Internet. 
+Other Internet protocols like FTP, Gopher, and HTTP sit on top of TCP/IP.
+- **VPN** - Virtual Private Networking; a means of securely accessing resources on a network by connecting to a remote access server through the Internet or other network. 
+- **WLAN** - Wireless Local Area Network; the computers and devices that make up a wireless network. 
+- **XML** - Extensible Markup Language; A markup language for coding web documents that allows designers to create their own customized tags for structuring a page.
