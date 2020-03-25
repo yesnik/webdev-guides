@@ -15,6 +15,7 @@ GPS actually refers to a GPS receiver which uses a mathematical principle called
 that can tell you exactly where you are on Earth at any moment. 
 - **GUI** - Graphical user interface; a mouse-based system that contains icons, drop-down menus, 
 and windows where you point and click to indicate what you want to do. 
+- **IMAP** - Internet Message Access Protcol. A method of accessing e-mail messages on a server without downloading them to your local hard drive; it is the main difference between IMAP and POP3 which requires messages to be downloaded to a user's hard drive before the message can be read. 
 - **Internet** is a technical infrastructure which allows billions of computers to be connected all together. 
 The Internet is an infrastructure, whereas the Web is a service built on top of the infrastructure. 
 There are several other services built on top of the Internet, such as email and IRC.
