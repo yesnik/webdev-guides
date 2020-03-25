@@ -21,3 +21,4 @@ The Internet is an infrastructure, whereas the Web is a service built on top of 
 There are several other services built on top of the Internet, such as email and IRC.
 - **IP address** - Internet Protocol address; every computer connected to the Internet has a unique identifying number. 
 Example: `192.168.10.2`
+- **ISP** - Internet Service Provider; an organization or company that provides Internet connectivity.
