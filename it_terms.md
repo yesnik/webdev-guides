@@ -8,6 +8,7 @@ a protocol that lets a server on a local network assign temporary IP addresses t
 - **Ethernet** - A popular network technology that enables data to travel at 10 megabits per second. 
 Campus microcomputers connected to a network have Ethernet cards installed that are attached to Ethernet cabling. 
 An Ethernet connection is often referred to as a "direct connection" and is capable of providing data transmission speeds over 500 Kbps. 
+- **Exponential backoff** - Method that you should use to retry API request if you receive a 5xx response.
 - **FTP** - File Transfer Protocol; a method of exchanging files between computers via the Internet. 
 Files can contain documents or programs and can be ASCII text or binary data. 
 - **GPS** - Global Positioning System; a collection of Earth-orbiting satellites. In a more common context, 
