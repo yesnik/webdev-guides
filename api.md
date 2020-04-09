@@ -37,3 +37,12 @@ Bad
 GET /card/1
 GET /product/1
 ```
+
+### Use nesting to show relation between resources
+
+We want to show books of author with id = 1:
+
+- `/authors/1/books` - using nesting
+- `/books?author_id=1` - using filters 
+
+Too many nested levels may not look too elegant.
