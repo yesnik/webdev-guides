@@ -97,3 +97,14 @@ To do this enable sorting, filtering capabilities in resource collection API and
 /products?region=USA&brand=ABC
 /managed-devices?region=USA&sort=udated_at
 ```
+
+### 6. Use versions for API
+
+We should have different versions of API if we're making any changes to them that may break clients. 
+
+```
+/api/v1/products
+/api/v2/products
+```
+
+The `v1` endpoint can stay active for people who don't want to change. The `v2` endpoint with new features can serve those who are ready to upgrade. This is especially important if our API is public. 
