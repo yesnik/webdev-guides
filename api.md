@@ -47,7 +47,12 @@ We want to show books of author with id = 1:
 
 Too many nested levels may not look too elegant.
 
-### 4. Create documentation for your API
+### 4. Use pagination
+
+It's not a good idea to send large amount of data through HTTP, because serializing the large JSON objects are expensive. 
+That's why it's better to paginate the results.
+
+### 5. Create documentation for your API
 
 Create useful documentation with examples. 
 Describe API endpoints, and describe all operations allowed on each endpoint. 
