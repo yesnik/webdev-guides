@@ -2,7 +2,7 @@
 
 ## Best practices
 
-### Use nouns, not verbs
+### 1. Endpoints as nouns, not verbs
 
 Good
 
@@ -22,7 +22,7 @@ POST /updatePost/1
 POST /deletePost/1
 ```
 
-### Use plural nouns for collections
+### 2. Use plural nouns for collections
 
 Good
 
@@ -38,7 +38,7 @@ GET /card/1
 GET /product/1
 ```
 
-### Use nesting to show relation between resources
+### 3. Use nesting to show relation between resources
 
 We want to show books of author with id = 1:
 
@@ -46,3 +46,9 @@ We want to show books of author with id = 1:
 - `/books?author_id=1` - using filters 
 
 Too many nested levels may not look too elegant.
+
+### 4. Create documentation for your API
+
+Create useful documentation with examples. 
+Describe API endpoints, and describe all operations allowed on each endpoint. 
+You can use a tool to do this in an automated way.
