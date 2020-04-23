@@ -2,7 +2,9 @@
 
 ## Best practices
 
-### 1. Endpoints as nouns, not verbs
+### 1. Resource naming
+
+**1.1. Endpoints as nouns, not verbs**
 
 URI should refer to a resource that is a thing (noun) instead of referring to an action (verb) because nouns have properties which verbs do not have – similar to resources have attributes.
 
@@ -31,7 +33,7 @@ But in some cases we can use verbs. Controller resources are like executable fun
 /song-management/users/123/playlist/play
 ```
 
-### 2. Use plural nouns for collections
+**1.2. Use plural nouns for collections**
 
 Good
 
@@ -47,7 +49,19 @@ GET /card/1
 GET /product/1
 ```
 
-### 3. Use nesting to show relation between resources
+**1.3. Use hyphens**
+
+To improve the readability of long URIs use hyphens to split words:
+
+```
+# More readable
+/inventory-management/managed-entities/123/install-script-location
+
+# Less readable
+/inventory-management/managedEntities/123/installScriptLocation
+```
+
+**1.4. Use nesting to show relation between resources**
 
 We want to show books of author with id = 1:
 
@@ -56,12 +70,12 @@ We want to show books of author with id = 1:
 
 Too many nested levels may not look too elegant.
 
-### 4. Use pagination
+### 2. Use pagination
 
 It's not a good idea to send large amount of data through HTTP, because serializing the large JSON objects are expensive. 
 That's why it's better to paginate the results.
 
-### 5. Create documentation for your API
+### 3. Create documentation for your API
 
 Create useful documentation with examples. 
 Describe API endpoints, and describe all operations allowed on each endpoint. 
