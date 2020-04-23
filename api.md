@@ -86,11 +86,10 @@ Create useful documentation with examples.
 Describe API endpoints, and describe all operations allowed on each endpoint. 
 You can use a tool to do this in an automated way.
 
-### 5. Use query params to filter, sort URI collection
+### 5. Allow filtering, sorting
 
-Sometimes we need a collection of resource to be sorted, filtered or limited 
-based on some certain resource attribute. 
-To do this enable sorting, filtering and pagination capabilities in resource collection API and pass the input parameters as query parameters:
+Sometimes we need a collection of resource to be sorted or filtered. 
+To do this enable sorting, filtering capabilities in resource collection API and pass the input parameters as query parameters:
 
 ```
 /products
