@@ -70,18 +70,23 @@ We want to show books of author with id = 1:
 
 Too many nested levels may not look too elegant.
 
-### 2. Use pagination
+### 2. Use JSON in requests and responses
+
+API should accept request payload and send response in JSON format. JSON is a convenient way to transfer data. 
+Almost every technology can use it: frontend and backend technologies have libraries that can encode and decode JSON.
+
+### 3. Use pagination
 
 It's not a good idea to send large amount of data through HTTP, because serializing the large JSON objects are expensive. 
 That's why it's better to paginate the results.
 
-### 3. Create documentation for your API
+### 4. Create documentation for your API
 
 Create useful documentation with examples. 
 Describe API endpoints, and describe all operations allowed on each endpoint. 
 You can use a tool to do this in an automated way.
 
-### 4. Use query params to filter, sort URI collection
+### 5. Use query params to filter, sort URI collection
 
 Sometimes we need a collection of resource to be sorted, filtered or limited 
 based on some certain resource attribute. 
