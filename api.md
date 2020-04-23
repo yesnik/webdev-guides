@@ -80,3 +80,16 @@ That's why it's better to paginate the results.
 Create useful documentation with examples. 
 Describe API endpoints, and describe all operations allowed on each endpoint. 
 You can use a tool to do this in an automated way.
+
+### 4. Use query params to filter, sort URI collection
+
+Sometimes we need a collection of resource to be sorted, filtered or limited 
+based on some certain resource attribute. 
+To do this enable sorting, filtering and pagination capabilities in resource collection API and pass the input parameters as query parameters:
+
+```
+/products
+/products?region=USA
+/products?region=USA&brand=ABC
+/managed-devices?region=USA&sort=udated_at
+```
