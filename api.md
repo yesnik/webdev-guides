@@ -24,6 +24,13 @@ POST /updatePost/1
 POST /deletePost/1
 ```
 
+But in some cases we can use verbs. Controller resources are like executable functions, with parameters and return values, inputs and outputs:
+
+```
+/cart-management/users/123/cart/checkout
+/song-management/users/123/playlist/play
+```
+
 ### 2. Use plural nouns for collections
 
 Good
