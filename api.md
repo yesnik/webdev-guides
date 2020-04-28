@@ -108,3 +108,10 @@ We should have different versions of API if we're making any changes to them tha
 ```
 
 The `v1` endpoint can stay active for people who don't want to change. The `v2` endpoint with new features can serve those who are ready to upgrade. This is especially important if our API is public. 
+
+### 7. Return useful errors
+
+You should correctly handle following situations:
+
+- Client hits invalid URL of your API
+- Client provides invalid params for your API method
