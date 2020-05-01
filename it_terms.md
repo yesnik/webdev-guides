@@ -42,6 +42,7 @@ can be used for connecting almost any type of external device including a mouse,
 - **SMTP** - Simple Mail Transfer Protocol; a method of handling outgoing electronic mail.
 - **TCP/IP** - Transmission Control Protocol/Internet Protocol; an agreed upon set of rules that tells computers how to exchange information over the Internet. 
 Other Internet protocols like FTP, Gopher, and HTTP sit on top of TCP/IP.
+- **UUID** - Universally Unique Identifier. It's a 128-bit number used to identify information in computer systems. While the probability that a UUID will be duplicated is not zero, it is close enough to zero to be negligible.
 - **VPN** - Virtual Private Networking; a means of securely accessing resources on a network by connecting to a remote access server through the Internet or other network. 
 - **WLAN** - Wireless Local Area Network; the computers and devices that make up a wireless network. 
 - **XML** - Extensible Markup Language; A markup language for coding web documents that allows designers to create their own customized tags for structuring a page.
