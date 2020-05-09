@@ -40,7 +40,9 @@ When it is unable to do so, the request is forwarded to the real server.
 - **serial port** - An interface on a computer that supports transmission of a single bit at a time; 
 can be used for connecting almost any type of external device including a mouse, a modem, or a printer.
 - **SLI** - Service Level Indicator is a measure of the service level provided by a service provider to a customer.
-- **SLO** - Service Level objective is a specific measurable characteristic of the SLA such as availability, throughput, frequency, response time, or quality.
+- **SLO** - Service Level objective is a specific measurable characteristic of the SLA such as availability, throughput, frequency, response time, or quality. Examples: 
+    - 99% uptime per year; i.e. our *Error Budget* is 1%. 
+    - latency (95th percentile) < 300ms
 - **SMTP** - Simple Mail Transfer Protocol; a method of handling outgoing electronic mail.
 - **TCP/IP** - Transmission Control Protocol/Internet Protocol; an agreed upon set of rules that tells computers how to exchange information over the Internet. 
 Other Internet protocols like FTP, Gopher, and HTTP sit on top of TCP/IP.
