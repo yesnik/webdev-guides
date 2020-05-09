@@ -39,6 +39,8 @@ When it is unable to do so, the request is forwarded to the real server.
 - **SATA** - Serial Advanced Technology Attachment or Serial ATA. An interface used to connect ATA hard drives to a computer's motherboard that provides a better, more efficient interface; Serial ATA is likely to replace the previous standard, Parallel ATA (PATA), which has become dated.
 - **serial port** - An interface on a computer that supports transmission of a single bit at a time; 
 can be used for connecting almost any type of external device including a mouse, a modem, or a printer.
+- **SLI** - Service Level Indicator is a measure of the service level provided by a service provider to a customer.
+- **SLO** - Service Level objective is a specific measurable characteristic of the SLA such as availability, throughput, frequency, response time, or quality.
 - **SMTP** - Simple Mail Transfer Protocol; a method of handling outgoing electronic mail.
 - **TCP/IP** - Transmission Control Protocol/Internet Protocol; an agreed upon set of rules that tells computers how to exchange information over the Internet. 
 Other Internet protocols like FTP, Gopher, and HTTP sit on top of TCP/IP.
