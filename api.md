@@ -115,3 +115,17 @@ You should correctly handle following situations:
 
 - Client hits invalid URL of your API
 - Client provides invalid params for your API method
+- Client tries to pass additional params that may break your API
+
+### 8. Return correct HTTP response code
+
+- `200` - success
+- `201` - created
+- `400` - bad request
+- `401` - unauthorized
+- `403` - forbidden
+- `404` - not found
+- `405` - method not allowed
+- `500` - internal server error
+- `503` - service unavailable
+
