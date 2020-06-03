@@ -80,6 +80,20 @@ Almost every technology can use it: frontend and backend technologies have libra
 It's not a good idea to send large amount of data through HTTP, because serializing the large JSON objects are expensive. 
 That's why it's better to paginate the results.
 
+**3.1. Return additional info**
+
+```json
+{
+  "totalItems": 50,
+  "page": 1,
+  "data": [
+    {"id": 1, "title": "Book"},
+    {"id": 2, "title": "Pen"},
+    ...
+  ]
+}
+```
+
 ### 4. Create documentation for your API
 
 Create useful documentation with examples. 
