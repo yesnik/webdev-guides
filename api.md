@@ -88,8 +88,7 @@ That's why it's better to paginate the results.
   "page": 1,
   "data": [
     {"id": 1, "title": "Book"},
-    {"id": 2, "title": "Pen"},
-    ...
+    {"id": 2, "title": "Pen"}
   ]
 }
 ```
@@ -142,4 +141,9 @@ You should correctly handle following situations:
 - `405` - method not allowed
 - `500` - internal server error
 - `503` - service unavailable
+
+### 9. Log requests and responses
+
+It's useful to add an opportunity to log all requests to your API and responses.
+It will help you to say what went wrong when some your's API user got an error.
 
