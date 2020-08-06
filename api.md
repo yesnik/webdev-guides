@@ -99,6 +99,8 @@ Create useful documentation with examples.
 Describe API endpoints, and describe all operations allowed on each endpoint. 
 You can use a tool to do this in an automated way.
 
+For example we can create our API spec using [Swagger Editor](https://editor.swagger.io/)
+
 ### 5. Allow filtering, sorting
 
 Sometimes we need a collection of resource to be sorted or filtered. 
