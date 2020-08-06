@@ -122,7 +122,9 @@ We should have different versions of API if we're making any changes to them tha
 
 The `v1` endpoint can stay active for people who don't want to change. The `v2` endpoint with new features can serve those who are ready to upgrade. This is especially important if our API is public. 
 
-### 7. Return useful errors
+### 7. Send useful response
+
+**Meaningful errors**
 
 You should correctly handle following situations:
 
@@ -130,7 +132,7 @@ You should correctly handle following situations:
 - Client provides invalid params for your API method
 - Client tries to pass additional params that may break your API
 
-### 8. Return correct HTTP response code
+**Correct HTTP response code**
 
 - `200` - success
 - `201` - created
@@ -142,7 +144,46 @@ You should correctly handle following situations:
 - `500` - internal server error
 - `503` - service unavailable
 
-### 9. Log requests and responses
+**Unified response structure**
+
+Request `GET /users`.
+
+Response (success):
+
+```json
+{
+  "success": true,
+  "data": [
+    {"id": 1, "login": "kenny"},
+    {"id": 1, "login": "leo"},
+  ]
+}
+```
+
+Response (error):
+
+```json
+{
+  "success": false,
+  "error": "No users in the database"
+}
+```
+
+
+**Useful response body**
+
+For example, if you make `POST /users/` it'll be useful if server returns: 
+
+```json
+{
+  "success": true,
+  "data": {
+    "userId": 99
+  }
+}
+```
+
+### 8. Log requests and responses
 
 It's useful to add an opportunity to log all requests to your API and responses.
 It will help you to say what went wrong when some your's API user got an error.
