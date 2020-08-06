@@ -101,8 +101,9 @@ You can use a tool to do this in an automated way.
 
 There are different schema formats for API:
 
-- OpenAPI
-- GraphQL
+- [OpenAPI](https://www.openapis.org/)
+- [GraphQL](https://graphql.org/)
+- [RAML](https://raml.org/) - RESTful API Modeling Language (RAML) 
 
 There are different tools for creating API documentation:
 
