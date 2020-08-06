@@ -99,7 +99,15 @@ Create useful documentation with examples.
 Describe API endpoints, and describe all operations allowed on each endpoint. 
 You can use a tool to do this in an automated way.
 
-For example we can create our API spec using [Swagger Editor](https://editor.swagger.io/)
+There are different schema formats for API:
+
+- OpenAPI
+- GraphQL
+
+There are different tools for creating API documentation:
+
+- [Postman](https://www.postman.com/). It's possible to create API requests there and publish documentation.
+- [Swagger Editor](https://editor.swagger.io/)
 
 ### 5. Allow filtering, sorting
 
