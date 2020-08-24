@@ -199,3 +199,8 @@ For example, if you make `POST /users/` it'll be useful if server returns:
 It's useful to add an opportunity to log all requests to your API and responses.
 It will help you to say what went wrong when some your's API user got an error.
 
+### 9. Monitor the performance
+
+- It's important to set time limits, and notify developers when API method works to slowly.
+- Also it's a good idea to log execution time of every request.
+
