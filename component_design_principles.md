@@ -1,6 +1,6 @@
 # Component Design Principles
 
-## 1. Component Cohesion principles
+## 1. Component Cohesion Principles
 
 They focus on the granularity of components and help the developer partition classes into components.
 
@@ -38,6 +38,8 @@ If changes are focused into a single component, we need redeploy only the one ch
 Other components that don't depend on the changed component do not need to be revalidated or redeployed.
 
 ## 2. Component Coupling Principles
+
+They focus on the stability and relationships between the components.
 
 ### 2.1. The Acyclic Dependencies Principle (ADP)
 
