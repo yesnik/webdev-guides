@@ -32,6 +32,7 @@ But in some cases we can use verbs. Controller resources are like executable fun
 /cart-management/users/123/cart/checkout
 /song-management/users/123/playlist/play
 ```
+Ensure that your GET, PUT, and DELETE operations are all idempotent. There should be no adverse side affects from these operations.
 
 **1.2. Use plural nouns for collections**
 
