@@ -146,12 +146,13 @@ You should correctly handle following situations:
 **Correct HTTP response code**
 
 - `200` - success
-- `201` - created
-- `400` - bad request
+- `201` - created. Returned on successful creation of a new resource.
+- `400` - bad request. Data issues such as invalid JSON, etc.
 - `401` - unauthorized
 - `403` - forbidden
 - `404` - not found
 - `405` - method not allowed
+- `409` - conflict. Duplicate data or invalid data state would occur.
 - `500` - internal server error
 - `503` - service unavailable
 
