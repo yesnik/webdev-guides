@@ -148,13 +148,14 @@ You should correctly handle following situations:
 
 - `200` - success
 - `201` - created. Returned on successful creation of a new resource.
-- `400` - bad request. Data issues such as invalid JSON, etc.
-- `401` - unauthorized
-- `403` - forbidden
-- `404` - not found
-- `405` - method not allowed
-- `409` - conflict. Duplicate data or invalid data state would occur.
-- `500` - internal server error
+- `204` - no content. Indicates success but nothing is in the response body, often used for DELETE and PUT operations.
+- `400` - bad request. Data issues such as invalid JSON, Domain validation errors, missing data, etc.
+- `401` - unauthorized. Error code response for missing or invalid authentication token.
+- `403` - forbidden. Error code for when the user is not authorized to perform the operation or the resource is unavailable for some reason (e.g. time constraints, etc.).
+- `404` - not found. Used when the requested resource is not found, whether it doesn't exist or if there was a 401 or 403 that, for security reasons, the service wants to mask.
+- `405` - method not allowed. Used to indicate that the requested URL exists, but the requested HTTP method is not applicable. For example, POST /users/12345 where the API doesn't support creation of resources this way (with a provided ID). The Allow HTTP header must be set when returning a 405 to indicate the HTTP methods that are supported. In the previous case, the header would look like `Allow: GET, PUT, DELETE`.
+- `409` - conflict. Whenever a resource conflict would be caused by fulfilling the request. Duplicate entries, such as trying to create two customers with the same information, and deleting root objects when cascade-delete is not supported.
+- `500` - internal server error. Never return this intentionally. The general catch-all error when the server-side throws an exception.
 - `503` - service unavailable
 
 **Unified response structure**
