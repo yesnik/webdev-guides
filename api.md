@@ -158,6 +158,8 @@ You should correctly handle following situations:
 - `500` - internal server error. Never return this intentionally. The general catch-all error when the server-side throws an exception.
 - `503` - service unavailable
 
+More info at [iana.org](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)
+
 **Unified response structure**
 
 Request `GET /users`.
