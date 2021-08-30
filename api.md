@@ -209,3 +209,6 @@ It will help you to say what went wrong when some your's API user got an error.
 - It's important to set time limits, and notify developers when API method works to slowly.
 - Also it's a good idea to log execution time of every request.
 
+## Useful links
+
+- https://restcookbook.com/
