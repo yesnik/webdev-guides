@@ -146,8 +146,11 @@ You should correctly handle following situations:
 
 **Correct HTTP response code**
 
+See [HTTP response status codes at mozilla.org](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+
 - `200` - success
 - `201` - created. Returned on successful creation of a new resource.
+- `202` - accepted. Indicates that the request has been accepted for processing, but the processing has not been completed or not have started yet. 
 - `204` - no content. Indicates success but nothing is in the response body, often used for DELETE and PUT operations.
 - `400` - bad request. Data issues such as invalid JSON, Domain validation errors, missing data, etc.
 - `401` - unauthorized. Error code response for missing or invalid authentication token.
