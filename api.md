@@ -123,16 +123,17 @@ To do this enable sorting, filtering capabilities in resource collection API and
 /managed-devices?region=USA&sort=udated_at
 ```
 
-### 6. Use versions for API
+### 6. Add support of adding new versions of API
 
-We should have different versions of API if we're making any changes to them that may break clients. 
+We need an ability to add new versions of API. Otherwise our changes may break clients. 
 
 ```
 /api/v1/products
 /api/v2/products
 ```
 
-The `v1` endpoint can stay active for people who don't want to change. The `v2` endpoint with new features can serve those who are ready to upgrade. This is especially important if our API is public. 
+The `v1` endpoint can stay active for people who don't want to change. 
+The `v2` endpoint with new features can serve those who are ready to upgrade. This is especially important if our API is public. 
 
 ### 7. Send useful response
 
@@ -188,7 +189,6 @@ Response (error):
 }
 ```
 
-
 **Useful response body**
 
 For example, if you make `POST /users/` it'll be useful if server returns: 
@@ -204,8 +204,7 @@ For example, if you make `POST /users/` it'll be useful if server returns:
 
 ### 8. Log requests and responses
 
-It's useful to add an opportunity to log all requests to your API and responses.
-It will help you to say what went wrong when some your's API user got an error.
+Log all requests to your API and responses. It will help you to debug.
 
 ### 9. Monitor the performance
 
