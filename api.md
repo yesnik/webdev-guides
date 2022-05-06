@@ -214,3 +214,4 @@ Log all requests to your API and responses. It will help you to debug.
 ## Useful links
 
 - https://restcookbook.com/
+- https://restfulapi.net/
