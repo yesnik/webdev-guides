@@ -215,3 +215,4 @@ Log all requests to your API and responses. It will help you to debug.
 
 - https://restcookbook.com/
 - https://restfulapi.net/
+- [Documenting APIs: A guide for technical writers and engineers](https://idratherbewriting.com/learnapidoc/)
