@@ -59,3 +59,11 @@ sequenceDiagram
 |------------|----------|--------|---------------------|----------------------------------------|
 | success    | Yes      | bool   | Was claim created?  | true                                   |
 | error      | Yes      | string | Error's description | Double claim was found for this mobile |
+
+### 2.1.5. Business validation
+
+| № | System Action                                 | System behavour                                  | Error text                       |
+|---|-----------------------------------------------|--------------------------------------------------|----------------------------------|
+| 1 | System tries to find double claim by mobile   | If double was found system returns error         | Dobule was found                 |
+| 2 | System validates format of all request params | System returns error text for each invalid field | {"mobile": "Mobile is required"} |
+
