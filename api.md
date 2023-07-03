@@ -8,23 +8,9 @@
 
 URI should refer to a resource that is a thing (noun) instead of referring to an action (verb) because nouns have properties which verbs do not have – similar to resources have attributes.
 
-Good
-
-```
-POST /posts
-GET /posts/1
-PUT /posts/1
-DELETE /posts/1
-```
-
-Bad
-
-```
-POST /createPost
-GET /getPost/1
-POST /updatePost/1
-POST /deletePost/1
-```
+| Good                                                                   | Bad                                                                                    |
+|------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| `POST /posts`<br>`GET /posts/1`<br>`PUT /posts/1`<br>`DELETE /posts/1` | `POST /createPost`<br>`GET /getPost/1`<br>`POST /updatePost/1`<br>`POST /deletePost/1` |
 
 But in some cases we can use verbs. Controller resources are like executable functions, with parameters and return values, inputs and outputs:
 
@@ -36,19 +22,9 @@ Ensure that your GET, PUT, and DELETE operations are all idempotent. There shoul
 
 **1.2. Use plural nouns for collections**
 
-Good
-
-```
-GET /cards/1
-GET /products/1
-```
-
-Bad
-
-```
-GET /card/1
-GET /product/1
-```
+| Good                                | Bad                               |
+|-------------------------------------|-----------------------------------|
+| `GET /cards/1`<br>`GET /products/1` | `GET /card/1`<br>`GET /product/1` |
 
 **1.3. Use hyphens**
 
