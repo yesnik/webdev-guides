@@ -92,11 +92,23 @@ There are different tools for creating API documentation:
 Sometimes we need a collection of resource to be sorted or filtered. 
 To do this enable sorting, filtering capabilities in resource collection API and pass the input parameters as query parameters:
 
+**Filtering**:
+
 ```
 /products
 /products?region=USA
 /products?region=USA&brand=ABC
+
+# It's URL encoded version of `/catalog/phone/225?FILTER[brand][0]=218237&FILTER[brand][1]=218350`:
+/catalog/phone/225?FILTER%5Bbrand%5D%5B0%5D=218237&FILTER%5Bbrand%5D%5B1%5D=218350
+```
+
+**Sorting**:
+
+```
 /managed-devices?region=USA&sort=udated_at
+/catalog/phone/225/zte?ORDER_BY=-popularity
+/catalog/phone/225/zte?ORDER_BY=price
 ```
 
 ### 6. Add support of adding new versions of API
