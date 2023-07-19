@@ -87,12 +87,12 @@ There are different tools for creating API documentation:
 - [Postman](https://www.postman.com/). It's possible to create API requests there and publish documentation.
 - [Swagger Editor](https://editor.swagger.io/)
 
-### 5. Allow filtering, sorting
+### 5. Allow filter, sort, limit
 
-Sometimes we need a collection of resource to be sorted or filtered. 
+Sometimes we need a collection of resource to be sorted, filtered or limited. 
 To do this enable sorting, filtering capabilities in resource collection API and pass the input parameters as query parameters:
 
-**Filtering**:
+**Filter**:
 
 ```
 /products
@@ -103,12 +103,18 @@ To do this enable sorting, filtering capabilities in resource collection API and
 /catalog/phone/225?FILTER%5Bbrand%5D%5B0%5D=218237&FILTER%5Bbrand%5D%5B1%5D=218350
 ```
 
-**Sorting**:
+**Sort**:
 
 ```
 /managed-devices?region=USA&sort=udated_at
 /catalog/phone/225/zte?ORDER_BY=-popularity
 /catalog/phone/225/zte?ORDER_BY=price
+```
+
+**Limit**:
+
+```
+/devices?region=USA&sort=udated_at&limit=50
 ```
 
 ### 6. Add support of adding new versions of API
