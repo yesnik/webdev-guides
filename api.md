@@ -26,7 +26,7 @@ Ensure that your GET, PUT, and DELETE operations are all idempotent. There shoul
 |-------------------------------------|-----------------------------------|
 | `GET /cards/1`<br>`GET /products/1` | `GET /card/1`<br>`GET /product/1` |
 
-**1.3. Use hyphens**
+**1.3. Use hyphens (kebab-case)**
 
 To improve the readability of long URIs use hyphens to split words:
 
