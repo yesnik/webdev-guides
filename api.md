@@ -42,8 +42,8 @@ To improve the readability of long URIs use hyphens to split words:
 
 We want to show books of author with id = 1:
 
-- `/authors/1/books` - using nesting
-- `/books?author_id=1` - using filters 
+- `/authors/1/books`, `/posts/1/comments` - using nesting
+- `/books?authorId=1` - using filters 
 
 Too many nested levels may not look too elegant.
 
