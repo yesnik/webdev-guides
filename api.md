@@ -90,7 +90,9 @@ There are different tools for creating API documentation:
 ### 5. Allow filter, sort, limit
 
 Sometimes we need a collection of resource to be sorted, filtered or limited. 
-To do this enable sorting, filtering capabilities in resource collection API and pass the input parameters as query parameters:
+To do this enable sorting, filtering capabilities in resource collection API and pass the input parameters as query parameters.
+
+Use `camelCase` for query params.
 
 **Filter**:
 
@@ -99,22 +101,22 @@ To do this enable sorting, filtering capabilities in resource collection API and
 /products?region=USA
 /products?region=USA&brand=ABC
 
-# It's URL encoded version of `/catalog/phone/225?FILTER[brand][0]=218237&FILTER[brand][1]=218350`:
-/catalog/phone/225?FILTER%5Bbrand%5D%5B0%5D=218237&FILTER%5Bbrand%5D%5B1%5D=218350
+# It's URL encoded version of `/catalog/phone/225?filter[brand][0]=218237&filter[brand][1]=218350`:
+/catalog/phone/225?filter%5Bbrand%5D%5B0%5D=218237&filter%5Bbrand%5D%5B1%5D=218350
 ```
 
 **Sort**:
 
 ```
-/managed-devices?region=USA&sort=udated_at
-/catalog/phone/225/zte?ORDER_BY=-popularity
-/catalog/phone/225/zte?ORDER_BY=price
+/managed-devices?region=USA&sort=updatedAt
+/catalog/phone/225/zte?orderBy=-popularity
+/catalog/phone/225/zte?orderBy=price
 ```
 
 **Limit**:
 
 ```
-/devices?region=USA&sort=udated_at&limit=50
+/devices?region=USA&sort=updatedAt&limit=50
 ```
 
 ### 6. Add support of adding new versions of API
