@@ -4,6 +4,8 @@
 
 ### 1. Resource naming
 
+Resource is not entity. URL `/products/123` is a *resource*. It can return to the user info about such *entities* as Product, Comments, Reviews.
+
 **1.1. Endpoints as nouns, not verbs**
 
 URI should refer to a resource that is a thing (noun) instead of referring to an action (verb) because nouns have properties which verbs do not have – similar to resources have attributes.
