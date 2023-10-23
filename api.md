@@ -4,23 +4,23 @@
 
 ### 1. Resource naming
 
-Resource is not entity. URL `/products/123` is a *resource*. It can return to the user info about such *entities* as Product, Comments, Reviews.
-
 **1.1. Endpoints as nouns, not verbs**
 
-URI should refer to a resource that is a thing (noun) instead of referring to an action (verb) because nouns have properties which verbs do not have – similar to resources have attributes.
+URI should refer to a resource that is a thing (noun) instead of referring to an action (verb) because nouns have properties which verbs do not have.
 
 | Good                                                                   | Bad                                                                                    |
 |------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
 | `POST /posts`<br>`GET /posts/1`<br>`PUT /posts/1`<br>`DELETE /posts/1` | `POST /createPost`<br>`GET /getPost/1`<br>`POST /updatePost/1`<br>`POST /deletePost/1` |
 
-But in some cases we can use verbs. Controller resources are like executable functions, with parameters and return values, inputs and outputs:
+But in some cases, we can use verbs. Controller resources are like executable functions with parameters, return values, inputs, and outputs:
 
 ```
 /cart-management/users/123/cart/checkout
 /song-management/users/123/playlist/play
 ```
-Ensure that your GET, PUT, and DELETE operations are all idempotent. There should be no adverse side affects from these operations.
+
+**Important:** Ensure that your `GET`, `PUT`, and `DELETE` operations are all **idempotent**. 
+There should be no adverse side affects from these operations.
 
 **1.2. Use plural nouns for collections**
 
