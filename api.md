@@ -92,7 +92,12 @@ There are different tools for creating API documentation:
 ### 5. Allow filter, sort, limit
 
 Sometimes we need a collection of resource to be sorted, filtered or limited. 
-To do this enable sorting, filtering capabilities in resource collection API and pass the input parameters as query parameters.
+To do this enable sorting, filtering capabilities in resource collection API and pass the input parameters as **query parameters**.
+
+The difference between *URL parameters* and *query parameters*:
+
+- URL parameters are embedded within the URL path to identify specific resources: `/posts/123`, where `123` is an URL param.
+- Query parameters are appended after the URL path, starting with a `?`, and are used to pass and filter data within the request.
 
 Use `camelCase` for query params.
 
