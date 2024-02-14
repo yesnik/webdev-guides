@@ -220,6 +220,12 @@ Log all requests to your API and responses. It will help you to debug.
 - `X-Correlation-Id: abc123`. A Correlation ID is a unique identifier value that is attached to requests and messages that allow reference to a particular transaction or event chain. Attaching a Correlation ID to a request is arbitrary. Typically, a correlation ID is a nonstandard HTTP header, and it's part of the Java Messaging Service (JMS). You don't have to use one, but it's wise if you have even the smallest opportunity of using multiple processors to handle client requests.
 - `SystemId: mysite`. It's the name of the system or module that sends the request.
 
+### 11. Automatically generated documentation
+
+It's good to have a tool that can generate your API's documentation from the source code:
+
+- PHP: [API Platform](https://api-platform.com/)
+
 ## Useful links
 
 - https://restcookbook.com/
