@@ -120,17 +120,18 @@ Use `camelCase` for query params.
 /catalog/phone/225/zte?orderBy=price
 ```
 
-### 6. Add support of adding new versions of API
+### 6. Versioning
 
 We need an ability to add new versions of API. Otherwise our changes may break clients. 
 
-```
-/api/v1/products
-/api/v2/products
-```
+- `/api/v1/products`
+- `/api/v2/products`
 
 The `v1` endpoint can stay active for people who don't want to change. 
-The `v2` endpoint with new features can serve those who are ready to upgrade. This is especially important if our API is public. 
+
+The `v2` endpoint with new features can serve those who are ready to upgrade. This is especially important if our API is public.
+
+Also we can use header to version API: `X-API-Version: v3`
 
 ### 7. Send useful response
 
