@@ -146,18 +146,27 @@ You should correctly handle following situations:
 
 See [HTTP response status codes at mozilla.org](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 
-- `200` - success
-- `201` - created. Returned on successful creation of a new resource.
-- `202` - accepted. Indicates that the request has been accepted for processing, but the processing has not been completed or not have started yet. 
-- `204` - no content. Indicates success but nothing is in the response body, often used for DELETE and PUT operations.
-- `400` - bad request. Data issues such as invalid JSON, Domain validation errors, missing data, etc.
-- `401` - unauthorized. Error code response for missing or invalid authentication token.
-- `403` - forbidden. Error code for when the user is not authorized to perform the operation or the resource is unavailable for some reason (e.g. time constraints, etc.).
-- `404` - not found. Used when the requested resource is not found, whether it doesn't exist or if there was a 401 or 403 that, for security reasons, the service wants to mask.
-- `405` - method not allowed. Used to indicate that the requested URL exists, but the requested HTTP method is not applicable. For example, POST /users/12345 where the API doesn't support creation of resources this way (with a provided ID). The Allow HTTP header must be set when returning a 405 to indicate the HTTP methods that are supported. In the previous case, the header would look like `Allow: GET, PUT, DELETE`.
-- `409` - conflict. Whenever a resource conflict would be caused by fulfilling the request. Duplicate entries, such as trying to create two customers with the same information, and deleting root objects when cascade-delete is not supported.
-- `500` - internal server error. Never return this intentionally. The general catch-all error when the server-side throws an exception.
-- `503` - service unavailable
+- `200` - OK. The request succeeded.
+- `201` - Created. The request succeeded, and a new resource was created as a result. This is typically the response sent after POST requests, or some PUT requests.
+- `202` - Accepted. Indicates that the request has been accepted for processing, but the processing has not been completed or not have started yet. It is intended for cases where another process or server handles the request, or for batch processing.
+- `204` - No content. Indicates success but nothing is in the response body, often used for DELETE and PUT operations. The user agent may update its cached headers for this resource with the new ones.
+- `301` - Moved Permanently. The URL of the requested resource has been changed permanently. The new URL is given in the response.
+- `302` - Found. This response code means that the URI of requested resource has been changed temporarily.
+- `304` - Not Modified. This is used for caching purposes. It tells the client that the response has not been modified, so the client can continue to use the same cached version of the response.
+- `307` - Temporary Redirect. This has the same semantics as the `302 Found` response code, with the exception that the user agent must not change the HTTP method used: if a POST was used in the first request, a POST must be used in the redirected request.
+- `308` - Permanent Redirect. This has the same semantics as the `301 Moved Permanently` HTTP response code, with the exception that the user agent must not change the HTTP method used: if a POST was used in the first request, a POST must be used in the second request.
+- `400` - Bad request. Data issues such as invalid JSON, Domain validation errors, missing data, etc.
+- `401` - Unauthorized. Error code response for missing or invalid authentication token. The client must authenticate itself to get the requested response.
+- `403` - Forbidden. Error code for when the user is not authorized to perform the operation or the resource is unavailable for some reason (e.g. time constraints, etc.). Unlike `401 Unauthorized`, the client's identity is known to the server.
+- `404` - Not Found. The server cannot find the requested resource. In the browser, this means the URL is not recognized. In an API, this can also mean that the endpoint is valid but the resource itself does not exist. Servers may also send this response instead of 403 Forbidden to hide the existence of a resource from an unauthorized client.
+- `405` - Method Not Allowed. The request method is known by the server but is not supported by the target resource. For example, an API may not allow DELETE on a resource, or the TRACE method entirely. It is used to indicate that the requested URL exists, but the requested HTTP method is not applicable. For example, POST /users/12345 where the API doesn't support creation of resources this way (with a provided ID). The Allow HTTP header must be set when returning a 405 to indicate the HTTP methods that are supported. In the previous case, the header would look like `Allow: GET, PUT, DELETE`.
+- `409` - Conflict. Whenever a resource conflict would be caused by fulfilling the request. Duplicate entries, such as trying to create two customers with the same information, and deleting root objects when cascade-delete is not supported.
+- `500` - Internal server error. Never return this intentionally. The general catch-all error when the server-side throws an exception.
+- `501` - Not Implemented. The request method is not supported by the server and cannot be handled. The only methods that servers are required to support (and therefore that must not return this code) are GET and HEAD.
+- `502` - Bad Gateway. This error response means that the server, while working as a gateway to get a response needed to handle the request, got an invalid response.
+- `503` - Service unavailable. The server is not ready to handle the request. Common causes are a server that is down for maintenance or that is overloaded. Note that together with this response, a user-friendly page explaining the problem should be sent.
+- `504` - Gateway Timeout. This error response is given when the server is acting as a gateway and cannot get a response in time.
+- `505` - HTTP Version Not Supported. The HTTP version used in the request is not supported by the server.
 
 More info at [iana.org](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)
 
