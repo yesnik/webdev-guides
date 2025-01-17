@@ -30,15 +30,11 @@ There should be no adverse side affects from these operations.
 
 **1.3. Use hyphens (kebab-case)**
 
-To improve the readability of long URIs use hyphens to split words:
+To improve the readability of long URIs use hyphens to split words. Compare:
 
-```
-# More readable
-/inventory-management/managed-entities/123/install-script-location
-
-# Less readable
-/inventory-management/managedEntities/123/installScriptLocation
-```
+- `/servers-management/managed-entities/123/install-script-location`
+- `/servers_management/managed_entities/123/install_script_location`
+- `/serversManagement/managedEntities/123/installScriptLocation`
 
 **1.4. Use nesting to show relation between resources**
 
