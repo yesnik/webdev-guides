@@ -42,10 +42,9 @@ To improve the readability of long URIs use hyphens to split words:
 
 **1.4. Use nesting to show relation between resources**
 
-We want to show books of author with id = 1:
-
-- `/authors/1/books`, `/posts/1/comments` - using nesting
-- `/books?authorId=1` - using filters 
+- `/authors/1/books`
+- `/posts/1/comments`
+- `/products/1/reviews`
 
 Too many nested levels may not look too elegant.
 
@@ -59,7 +58,9 @@ Almost every technology can use it: frontend and backend technologies have libra
 It's not a good idea to send large amount of data through HTTP, because serializing the large JSON objects are expensive. 
 That's why it's better to paginate the results.
 
-**3.1. Return additional info**
+- `/v1/books?page=1&size=2`
+
+Return additional info:
 
 ```json
 {
@@ -89,9 +90,13 @@ There are different tools for creating API documentation:
 - [Postman](https://www.postman.com/). It's possible to create API requests there and publish documentation.
 - [Swagger Editor](https://editor.swagger.io/)
 
-### 5. Allow filter, sort, limit
+It's good to have a tool that can generate your API's documentation from the source code:
 
-Sometimes we need a collection of resource to be sorted, filtered or limited. 
+- PHP: [API Platform](https://api-platform.com/)
+
+### 5. Allow filter, sort
+
+Sometimes we need a collection of resource to be sorted or filtered. 
 To do this enable sorting, filtering capabilities in resource collection API and pass the input parameters as **query parameters**.
 
 The difference between *URL parameters* and *query parameters*:
@@ -101,7 +106,7 @@ The difference between *URL parameters* and *query parameters*:
 
 Use `camelCase` for query params.
 
-**Filter**:
+#### Filter
 
 ```
 /products
@@ -112,18 +117,12 @@ Use `camelCase` for query params.
 /catalog/phone/225?filter%5Bbrand%5D%5B0%5D=218237&filter%5Bbrand%5D%5B1%5D=218350
 ```
 
-**Sort**:
+#### Sort
 
 ```
 /managed-devices?region=USA&sort=updatedAt
 /catalog/phone/225/zte?orderBy=-popularity
 /catalog/phone/225/zte?orderBy=price
-```
-
-**Limit**:
-
-```
-/devices?region=USA&sort=updatedAt&limit=50
 ```
 
 ### 6. Add support of adding new versions of API
@@ -140,7 +139,7 @@ The `v2` endpoint with new features can serve those who are ready to upgrade. Th
 
 ### 7. Send useful response
 
-**Meaningful errors**
+#### Meaningful errors
 
 You should correctly handle following situations:
 
@@ -148,7 +147,7 @@ You should correctly handle following situations:
 - Client provides invalid params for your API method
 - Client tries to pass additional params that may break your API
 
-**Correct HTTP response code**
+#### Correct HTTP response code
 
 See [HTTP response status codes at mozilla.org](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 
@@ -167,18 +166,16 @@ See [HTTP response status codes at mozilla.org](https://developer.mozilla.org/en
 
 More info at [iana.org](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)
 
-**Unified response structure**
+#### Unified response structure
 
-Request `GET /users`.
+Request `GET /users/1`.
 
 Response (success):
 
 ```json
 {
-  "success": true,
   "data": [
-    {"id": 1, "login": "kenny"},
-    {"id": 1, "login": "leo"},
+    {"id": 1, "login": "kenny"}
   ]
 }
 ```
@@ -187,18 +184,16 @@ Response (error):
 
 ```json
 {
-  "success": false,
   "error": "No users in the database"
 }
 ```
 
-**Useful response body**
+#### Useful response body
 
 For example, if you make `POST /users/` it'll be useful if server returns: 
 
 ```json
 {
-  "success": true,
   "data": {
     "userId": 99
   }
@@ -211,20 +206,19 @@ Log all requests to your API and responses. It will help you to debug.
 
 ### 9. Monitor the performance
 
-- It's important to set time limits, and notify developers when API method works to slowly.
-- Also it's a good idea to log execution time of every request.
+- Log request execution time.
+- Set time limits, and notify developers when API method works too slowly.
 
 ### 10. Use headers
 
 - `Content-Type: application/json`
-- `X-Correlation-Id: abc123`. A Correlation ID is a unique identifier value that is attached to requests and messages that allow reference to a particular transaction or event chain. Attaching a Correlation ID to a request is arbitrary. Typically, a correlation ID is a nonstandard HTTP header, and it's part of the Java Messaging Service (JMS). You don't have to use one, but it's wise if you have even the smallest opportunity of using multiple processors to handle client requests.
-- `SystemId: mysite`. It's the name of the system or module that sends the request.
+- `Request-Id: x312dxd` - unique identifier value of every HTTP request involved in operation processing, and is generated on the client side and passed to server.
+- `X-Correlation-Id: abc1d23` - unique identifier value that is attached to requests and messages that allow reference to a particular transaction or event chain.
 
-### 11. Automatically generated documentation
+#### Authentication
 
-It's good to have a tool that can generate your API's documentation from the source code:
-
-- PHP: [API Platform](https://api-platform.com/)
+- **API Key**: `X-API-Key: MY_KEY`
+- **JWT**: `Authorization: Bearer <token>`
 
 ## Useful links
 
