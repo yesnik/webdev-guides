@@ -14,10 +14,9 @@ URI should refer to a resource that is a thing (noun) instead of referring to an
 
 But in some cases, we can use verbs. Controller resources are like executable functions with parameters, return values, inputs, and outputs:
 
-```
-/cart-management/users/123/cart/checkout
-/song-management/users/123/playlist/play
-```
+- `/cart-management/users/123/cart/checkout`
+- `/song-management/users/123/playlist/play`
+- `/v1/auth/login`
 
 **Important:** Ensure that your `GET`, `PUT`, and `DELETE` operations are all **idempotent**. 
 There should be no adverse side affects from these operations.
