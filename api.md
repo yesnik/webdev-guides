@@ -1,10 +1,8 @@
-# REST API
+# REST API Best practices
 
-## Best practices
+## 1. Resource naming
 
-### 1. Resource naming
-
-**1.1. Endpoints as nouns, not verbs**
+### 1.1. Endpoints as nouns, not verbs
 
 URI should refer to a resource that is a thing (noun) instead of referring to an action (verb) because nouns have properties which verbs do not have.
 
@@ -21,13 +19,13 @@ But in some cases, we can use verbs. Controller resources are like executable fu
 **Important:** Ensure that your `GET`, `PUT`, and `DELETE` operations are all **idempotent**. 
 There should be no adverse side affects from these operations.
 
-**1.2. Use plural nouns for collections**
+### 1.2. Use plural nouns for collections
 
 | Good                                | Bad                               |
 |-------------------------------------|-----------------------------------|
 | `GET /cards/1`<br>`GET /products/1` | `GET /card/1`<br>`GET /product/1` |
 
-**1.3. Use hyphens (kebab-case)**
+### 1.3. Use hyphens (kebab-case)
 
 To improve the readability of long URIs use hyphens to split words. Compare:
 
@@ -35,7 +33,7 @@ To improve the readability of long URIs use hyphens to split words. Compare:
 - `/servers_management/managed_entities/123/install_script_location`
 - `/serversManagement/managedEntities/123/installScriptLocation`
 
-**1.4. Use nesting to show relation between resources**
+### 1.4. Use nesting to show relation between resources
 
 - `/authors/1/books`
 - `/posts/1/comments`
@@ -43,12 +41,12 @@ To improve the readability of long URIs use hyphens to split words. Compare:
 
 Too many nested levels may not look too elegant.
 
-### 2. Use JSON in requests and responses
+## 2. Use JSON
 
 API should accept request payload and send response in JSON format. JSON is a convenient way to transfer data. 
 Almost every technology can use it: frontend and backend technologies have libraries that can encode and decode JSON.
 
-### 3. Use pagination
+## 3. Pagination
 
 It's not a good idea to send large amount of data through HTTP, because serializing the large JSON objects are expensive. 
 That's why it's better to paginate the results.
@@ -68,7 +66,7 @@ Return additional info:
 }
 ```
 
-### 4. Create documentation for your API
+## 4. Documentation
 
 Create useful documentation with examples. 
 Describe API endpoints, and describe all operations allowed on each endpoint. 
@@ -89,7 +87,7 @@ It's good to have a tool that can generate your API's documentation from the sou
 
 - PHP: [API Platform](https://api-platform.com/)
 
-### 5. Allow filter, sort
+## 5. Allow filter, sort
 
 Sometimes we need a collection of resource to be sorted or filtered. 
 To do this enable sorting, filtering capabilities in resource collection API and pass the input parameters as **query parameters**.
@@ -101,7 +99,7 @@ The difference between *URL parameters* and *query parameters*:
 
 Use `camelCase` for query params.
 
-#### Filter
+### Filter
 
 ```
 /products
@@ -112,7 +110,7 @@ Use `camelCase` for query params.
 /catalog/phone/225?filter%5Bbrand%5D%5B0%5D=218237&filter%5Bbrand%5D%5B1%5D=218350
 ```
 
-#### Sort
+### Sort
 
 ```
 /managed-devices?region=USA&sort=updatedAt
@@ -120,7 +118,7 @@ Use `camelCase` for query params.
 /catalog/phone/225/zte?orderBy=price
 ```
 
-### 6. Versioning
+## 6. Versioning
 
 We need an ability to add new versions of API. Otherwise our changes may break clients. 
 
@@ -133,9 +131,9 @@ The `v2` endpoint with new features can serve those who are ready to upgrade. Th
 
 Also we can use header to version API: `X-API-Version: v3`
 
-### 7. Send useful response
+## 7. Useful response
 
-#### Meaningful errors
+### Meaningful errors
 
 You should correctly handle following situations:
 
@@ -143,7 +141,7 @@ You should correctly handle following situations:
 - Client provides invalid params for your API method
 - Client tries to pass additional params that may break your API
 
-#### Correct HTTP response code
+### Correct HTTP response code
 
 See [HTTP response status codes at mozilla.org](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 
@@ -171,7 +169,7 @@ See [HTTP response status codes at mozilla.org](https://developer.mozilla.org/en
 
 More info at [iana.org](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml)
 
-#### Unified response structure
+### Unified response structure
 
 Request `GET /users/1`.
 
@@ -193,7 +191,7 @@ Response (error):
 }
 ```
 
-#### Useful response body
+### Useful response body
 
 For example, if you make `POST /users/` it'll be useful if server returns: 
 
@@ -205,22 +203,24 @@ For example, if you make `POST /users/` it'll be useful if server returns:
 }
 ```
 
-### 8. Log requests and responses
+## 8. Logging
 
-Log all requests to your API and responses. It will help you to debug.
-
-### 9. Monitor the performance
-
+- Log all requests to your API and responses.
 - Log request execution time.
-- Set time limits, and notify developers when API method works too slowly.
 
-### 10. Use headers
+It will help you to debug.
+
+## 9. Monitoring
+
+Monitor API execution time, errors, and notify developers when API method works with errors.
+
+## 10. Use headers
 
 - `Content-Type: application/json`
 - `Request-Id: x312dxd` - unique identifier value of every HTTP request involved in operation processing, and is generated on the client side and passed to server.
 - `X-Correlation-Id: abc1d23` - unique identifier value that is attached to requests and messages that allow reference to a particular transaction or event chain.
 
-#### Authentication
+### Authentication
 
 - **API Key**: `X-API-Key: MY_KEY`
 - **JWT**: `Authorization: Bearer <token>`
