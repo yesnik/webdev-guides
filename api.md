@@ -82,6 +82,7 @@ There are different tools for creating API documentation:
 
 - [Postman](https://www.postman.com/). It's possible to create API requests there and publish documentation.
 - [Swagger Editor](https://editor.swagger.io/)
+- [Redoc](https://github.com/Redocly/redoc)
 
 It's good to have a tool that can generate your API's documentation from the source code:
 
