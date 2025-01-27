@@ -10,7 +10,11 @@ URI should refer to a resource that is a thing (noun) instead of referring to an
 |------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
 | `POST /posts`<br>`GET /posts/1`<br>`PUT /posts/1`<br>`DELETE /posts/1` | `POST /createPost`<br>`GET /getPost/1`<br>`POST /updatePost/1`<br>`POST /deletePost/1` |
 
-But in some cases, we can use verbs. Controller resources are like executable functions with parameters, return values, inputs, and outputs:
+We use plural form: 
+- `POST /posts`, because we want to create object in posts collection.
+- `GET /posts`, because we want to get a collection of posts.
+
+In some cases, we can use verbs. Controller resources are like executable functions with parameters, return values, inputs, and outputs:
 
 - `/cart-management/users/123/cart/checkout`
 - `/song-management/users/123/playlist/play`
